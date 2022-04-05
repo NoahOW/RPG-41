@@ -11,6 +11,20 @@ class Map {
 	default_random_engine gen;
 	public:
 	//TODO: Write a getter and a setter to get/set the characters in the map
+	static Map* currmap; 
+
+	static void createmap(){
+		currmap = new Map;
+	}
+
+	char getTile(int x, int y){
+		return map.at(y).at(x);
+	}
+	void setTile(int x, int y, char type){
+		 map.at(y).at(x) = type;
+	}
+
+
 	//TODO: Write a function to save the map and reload the map
 	static const char HERO     = 'H';
 	static const char MONSTER  = 'M';
@@ -112,3 +126,4 @@ class Map {
 		init_map();
 	}
 };
+Map *Map::currmap;
